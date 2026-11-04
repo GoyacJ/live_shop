@@ -2,13 +2,13 @@
 
 更新日期：2026-11-04
 
-目标仓库：<https://github.com/GoyacJ/live_shop>（当前为空、公开仓库）
+目标仓库：<https://github.com/GoyacJ/live_shop>（公开仓库，`main` 分支已初始化）
 
 ## 结论
 
 三个项目原本各自带有独立 `.git`，根目录已经补上统一 `.gitignore`；本次迁移不导入旧历史，公开仓库从全新初始提交开始。
 
-本次将创建根仓库初始提交并推送到目标仓库；三个旧 `.git` 已备份到工作区外，不随公开仓库发布。
+已创建根仓库初始提交并推送到目标仓库；三个旧 `.git` 已备份到工作区外，不随公开仓库发布。
 
 ## 本次已落地
 
@@ -18,7 +18,15 @@
 - `live_user_app/android/.gitignore` 的签名配置匹配修正为 `/key.properties`。
 - 新增脱敏模板：`app-dev.example.yml`、`wxpay_v3.example.properties`、`config.example.dart`、`key.properties.example`、`.env.example`。
 - `app.yml` 中的快递鸟账号已迁到本地 `app-dev.yml`；`app.yml` 只保留空占位。
-- 根目录已初始化本地 Git 仓库（分支 `main`），三个旧 `.git` 已备份到工作区外；初始提交包含三个项目源码、脱敏示例和数据库初始化脚本。
+- 根目录已初始化本地 Git 仓库并推送 `main`，三个旧 `.git` 已备份到工作区外；初始提交包含三个项目源码、脱敏示例和数据库初始化脚本。
+
+## 推送结果
+
+- 初始提交：`879df47b6a52e17279729bffda1233970c803474`
+- 远端分支：`main`（`origin/HEAD` 指向 `refs/heads/main`）
+- 提交文件数：3374
+- 提交内文件约 74.8 MiB
+- 已核对 `origin/main` 文件树：敏感配置、支付证书、签名文件、线上快照和构建产物均未出现；示例配置与数据库初始化脚本均已包含。
 
 三个子目录的 `.git` 已备份到工作区外，根仓库现在可以直接 `git add` 源码；公开历史从这次初始提交开始，不包含旧仓库中的密钥和线上数据。
 
