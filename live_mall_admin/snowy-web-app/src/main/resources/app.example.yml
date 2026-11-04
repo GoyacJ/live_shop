@@ -1,0 +1,69 @@
+#########################################
+# Copy to app.yml and fill local values.
+# app.yml is ignored because this file may contain environment credentials.
+#########################################
+server.port: 8081
+solon.env: dev
+
+server.request.maxHeaderSize: 10kb
+server.request.maxBodySize: 100MB
+server.request.maxFileSize: 100MB
+
+solon.logging.appender:
+  console:
+    level: "INFO"
+
+solon.serialization.json:
+  dateAsTimeZone: 'GMT+8'
+  dateAsFormat: 'yyyy-MM-dd HH:mm:ss'
+
+mybatis-flex:
+  typeAliasesPackage:
+    - "vip.xiaonuo.**.modular.**.entity"
+  mapperLocations:
+    - "classpath:vip/xiaonuo/**/mapping/*.xml"
+  typeHandlersPackage:
+    - "vip.xiaonuo.common.handler"
+  configuration:
+    cacheEnabled: false
+    mapperVerifyEnabled: false
+    mapUnderscoreToCamelCase: true
+  globalConfig:
+    printBanner: false
+    configuration:
+      cacheEnabled: false
+    logEnabled: true
+    keyConfig:
+      keyType: "Generator"
+      valueType: "snowFlakeId"
+
+knife4j.enable: true
+knife4j.production: false
+knife4j.basic.enable: true
+knife4j.basic.username: admin
+knife4j.basic.password: YOUR_KNIFE4J_PASSWORD
+knife4j.setting.enableOpenApi: false
+knife4j.setting.enableSwaggerModels: false
+knife4j.setting.enableFooter: false
+
+sa-token.token-name: token
+sa-token.timeout: 2592000
+sa-token.active-timeout: -1
+sa-token.is-concurrent: true
+sa-token.is-share: false
+sa-token.max-login-count: -1
+sa-token.token-style: random-32
+
+snowy.config.common.front-url: http://localhost:81
+snowy.config.common.backend-url: http://localhost:82
+solon.threads.virtual.enabled: true
+
+wx.pay.app-id: YOUR_WECHAT_APP_ID
+wx.pay.mch-id: YOUR_WECHAT_MCH_ID
+wx.pay.mch-key: YOUR_WECHAT_MCH_KEY
+
+logistics:
+  kdniao:
+    url: https://api.kdniao.com
+    userId: YOUR_KDNIAO_USER_ID
+    apiKey: YOUR_KDNIAO_API_KEY

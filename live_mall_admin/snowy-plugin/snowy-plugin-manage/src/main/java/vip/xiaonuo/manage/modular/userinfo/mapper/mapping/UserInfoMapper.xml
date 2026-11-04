@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="vip.xiaonuo.manage.modular.userinfo.mapper.UserInfoMapper">
+
+    <select id="statisticsInfo" resultType="manage.dto.UserStatisticsInfoDTO">
+        select COUNT(CASE WHEN t.last_login_device = 'H5' THEN 1 END)  AS h5VisitsNo,
+        COUNT(CASE WHEN t.last_login_device = 'App' THEN 1 END) AS appRegisterNo
+        from user_info t
+        where t.delete_flag = 'NOT_DELETE'
+        and (t.last_login_device is not null and t.last_login_device <![CDATA[<> ]]> '')
+        and t.create_time between #{beginTime} and #{endTime}
+    </select>
+</mapper>

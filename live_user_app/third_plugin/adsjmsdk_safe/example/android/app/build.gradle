@@ -1,0 +1,114 @@
+def localProperties = new Properties()
+def localPropertiesFile = rootProject.file('local.properties')
+if (localPropertiesFile.exists()) {
+    localPropertiesFile.withReader('UTF-8') { reader ->
+        localProperties.load(reader)
+    }
+}
+
+def flutterRoot = localProperties.getProperty('flutter.sdk')
+if (flutterRoot == null) {
+    throw new GradleException("Flutter SDK not found. Define location with flutter.sdk in the local.properties file.")
+}
+
+def flutterVersionCode = localProperties.getProperty('flutter.versionCode')
+if (flutterVersionCode == null) {
+    flutterVersionCode = '1'
+}
+
+def flutterVersionName = localProperties.getProperty('flutter.versionName')
+if (flutterVersionName == null) {
+    flutterVersionName = '1.0'
+}
+
+apply plugin: 'com.android.application'
+apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
+def replaceInManifest(manifestPath, fromString, toString){
+    def manifestContent = file(manifestPath).getText('UTF-8')
+    manifestContent = manifestContent.replace(fromString, toString)
+    file(manifestPath).write(manifestContent, 'UTF-8')
+}
+android {
+    compileSdkVersion 29
+
+    lintOptions {
+        disable 'InvalidPackage'
+    }
+
+    defaultConfig {
+        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
+        applicationId "com.baidu.mobads.demo.main"
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode flutterVersionCode.toInteger()
+        versionName flutterVersionName
+    }
+
+    buildTypes {
+      
+
+        release {
+            // TODO: Add your own signing config for the release build.
+            // Signing with the debug keys for now, so `flutter run --release` works.
+            signingConfig signingConfigs.debug
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+flutter {
+    source '../..'
+}
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+dependencies {
+
+//    implementation fileTree('libs/android-query-full.0.26.7.jar')
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    //noinspection GradleCompatible
+//    implementation 'com.android.support:recyclerview-v7:28.0.0'
+//    implementation 'androidx.appcompat:appcompat:1.1.0'
+//    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+//    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+//
+//
+//    //noinspection GradleCompatible
+//    implementation "com.android.support:support-v4:28.0.0"
+
+    compileOnly(name: 'sjmsdk_kssdk-ct-3.3.76.5', ext: 'aar')
+    compileOnly(name: 'sjmsdk_2.4.16', ext: 'aar')
+//    compileOnly(name: 'sjm_voice_ad_4.6.4.3', ext: 'aar')
+//    compileOnly(name: 'wapsdk_release_20220427', ext: 'aar')
+//    compileOnly(name: 'novelsdk-6.0.3.6.1', ext: 'aar')
+
+    //如果工程未引入kotlin，需要引入以下依赖库
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.4.10'
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib-common:1.4.10'
+    implementation 'org.jetbrains:annotations:13.0'
+    implementation 'org.jetbrains.kotlin:kotlin-android-extensions-runtime:1.4.10'
+
+//    implementation 'com.squareup.okhttp3:okhttp:3.12.0'
+//    implementation 'com.squareup.retrofit2:retrofit:2.2.0'
+//    implementation 'com.squareup.retrofit2:converter-gson:2.2.0'
+//    implementation 'com.google.code.gson:gson:2.8.5'
+//    implementation 'com.github.bumptech.glide:glide:4.9.0'
+//    implementation 'androidx.cardview:cardview:1.0.0'
+//    implementation 'com.liulishuo.filedownloader:library:1.7.7'
+//    // 版本需要指定 2.15.1
+//    implementation ('com.google.android.exoplayer:exoplayer-core:2.15.1') {
+//        exclude group: "androidx.annotation", module: "annotation"
+//    }
+//    // 版本需要指定 2.15.1
+//    implementation ('com.google.android.exoplayer:exoplayer-hls:2.15.1') {
+//        exclude group: "androidx.annotation", module: "annotation"
+//    }
+//    //如果您的项目中没有用到约束布局，需要添加该依赖
+//    implementation 'com.android.support.constraint:constraint-layout:2.0.4'
+}

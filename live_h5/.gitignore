@@ -1,0 +1,20 @@
+# uni-app build output and cache
+# 保留 unpackage/dist/Dockerfile 与 nginx.conf 作为部署模板；
+# 构建产物由 HBuilderX 生成，不进入源码仓库。
+unpackage/dist/build/
+unpackage/dist/cache/
+node_modules/
+
+# IDE and local files
+.idea/
+.vscode/
+.DS_Store
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Logs and temporary files
+*.log
+*.swp

@@ -1,0 +1,89 @@
+// 声明使用的插件
+plugins {
+    id "com.android.application"  // Android应用插件
+    id "kotlin-android"          // Kotlin Android插件
+    // Flutter Gradle插件必须在Android和Kotlin插件之后应用
+    id "dev.flutter.flutter-gradle-plugin"
+}
+
+// 读取签名配置文件
+def keystoreProperties = new Properties()
+def keystorePropertiesFile = rootProject.file("key.properties")
+if (keystorePropertiesFile.exists()) {
+    keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+}
+def releaseKeystoreFile = keystoreProperties["storeFile"]
+        ? rootProject.file(keystoreProperties["storeFile"])
+        : null
+def hasReleaseKeystore = releaseKeystoreFile?.exists() ?: false
+
+android {
+    namespace = "com.tianhui.wp"  // 应用包名
+    compileSdk = flutter.compileSdkVersion  // 编译SDK版本
+    ndkVersion = "28.2.13676358"  // jni plugin requirement
+
+    // Java编译选项
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8  // 源代码兼容性
+        targetCompatibility = JavaVersion.VERSION_1_8  // 目标代码兼容性
+    }
+
+    // Kotlin编译选项
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8  // JVM目标版本
+    }
+
+    // 默认配置
+    defaultConfig {
+        applicationId = "com.tianhui.wp"  // 应用ID
+        minSdk = flutter.minSdkVersion    // 最低支持的Android版本
+        targetSdk = flutter.targetSdkVersion  // 目标Android版本
+        versionCode = flutter.versionCode    // 版本号
+        versionName = flutter.versionName    // 版本名称
+        multiDexEnabled true  // 启用MultiDex支持，用于解决方法数超限问题
+
+        // NDK配置，指定支持的CPU架构
+        ndk {
+            // noinspection ChromeOsAbiSupport
+            // armeabi-v7a  32位
+            // arm64-v8a    64位
+            abiFilters "armeabi-v7a", "arm64-v8a"  // 支持的CPU架构
+        }
+    }
+
+    // 签名配置
+    signingConfigs {
+        if (hasReleaseKeystore) {
+            release {
+                keyAlias keystoreProperties["keyAlias"]
+                keyPassword keystoreProperties["keyPassword"]
+                storeFile releaseKeystoreFile
+                storePassword keystoreProperties["storePassword"]
+            }
+        }
+    }
+
+    // 构建类型配置
+    buildTypes {
+        debug {
+            // Use the generated debug keystore when the private release keystore is absent.
+            signingConfig signingConfigs.debug
+        }
+        profile {
+            signingConfig hasReleaseKeystore ? signingConfigs.release : signingConfigs.debug
+        }
+        release {
+            minifyEnabled false     // 是否启用代码混淆
+            shrinkResources false   // 是否启用资源压缩
+            if (hasReleaseKeystore) {
+                signingConfig signingConfigs.release
+            }
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'  // 混淆规则文件
+        }
+    }
+}
+
+// Flutter配置
+flutter {
+    source = "../.."  // Flutter源代码路径
+}

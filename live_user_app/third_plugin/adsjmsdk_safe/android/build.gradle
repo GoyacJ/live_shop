@@ -1,0 +1,86 @@
+group 'com.fengxu.plugin.adsjmsdk'
+version '1.0'
+
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.4.2'
+    }
+}
+
+rootProject.allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+apply plugin: 'com.android.library'
+
+android {
+    namespace = "com.sjm.plugin.adsjmsdk"  // 应用包名
+    compileSdkVersion 34
+
+    defaultConfig {
+        minSdkVersion 16
+    }
+    lintOptions {
+        disable 'InvalidPackage'
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+dependencies {
+
+//    implementation fileTree('libs/android-query-full.0.26.7.jar')
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    //noinspection GradleCompatible
+    implementation 'com.android.support:recyclerview-v7:28.0.0'
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+
+
+    //noinspection GradleCompatible
+    implementation "com.android.support:support-v4:28.0.0"
+
+    implementation(name: 'sjmsdk_kssdk-ct-3.3.76.5', ext: 'aar')
+    implementation(name: 'sjmsdk_2.4.16', ext: 'aar')
+    implementation(name: 'sjm_voice_ad_4.6.4.3', ext: 'aar')
+    implementation(name: 'wapsdk_release_20220427', ext: 'aar')
+    implementation(name: 'novelsdk-6.0.3.6.1', ext: 'aar')
+
+    implementation 'com.squareup.okhttp3:okhttp:3.12.0'
+    implementation 'com.squareup.retrofit2:retrofit:2.2.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.2.0'
+    implementation 'com.google.code.gson:gson:2.8.5'
+    implementation 'com.github.bumptech.glide:glide:4.9.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'com.liulishuo.filedownloader:library:1.7.7'
+    // 版本需要指定 2.15.1
+    implementation ('com.google.android.exoplayer:exoplayer-core:2.15.1') {
+        exclude group: "androidx.annotation", module: "annotation"
+    }
+    // 版本需要指定 2.15.1
+    implementation ('com.google.android.exoplayer:exoplayer-hls:2.15.1') {
+        exclude group: "androidx.annotation", module: "annotation"
+    }
+    //如果您的项目中没有用到约束布局，需要添加该依赖
+    implementation 'com.android.support.constraint:constraint-layout:2.0.4'
+
+}

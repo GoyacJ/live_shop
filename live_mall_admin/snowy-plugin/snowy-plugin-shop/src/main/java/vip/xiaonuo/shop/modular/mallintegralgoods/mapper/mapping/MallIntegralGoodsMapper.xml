@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="vip.xiaonuo.shop.modular.mallintegralgoods.mapper.MallIntegralGoodsMapper">
+
+    <update id="deductionStock">
+        UPDATE mall_integral_goods
+        SET stock = stock - #{stock}
+        WHERE id = #{goodsId} AND stock >= #{stock}
+    </update>
+</mapper>

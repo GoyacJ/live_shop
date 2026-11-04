@@ -1,0 +1,181 @@
+PODS:
+  - Ads-Fusion-CN-Beta (5.9.1.5):
+    - Ads-Fusion-CN-Beta/BUAdSDK (= 5.9.1.5)
+  - Ads-Fusion-CN-Beta/BUAdSDK (5.9.1.5)
+  - Ads-Fusion-CN-Beta/CSJMediation (5.9.1.5):
+    - Ads-Fusion-CN-Beta/BUAdSDK
+  - adsjmsdk (2.0.0):
+    - Flutter
+    - LUYSDK (> 1.3.8)
+  - BaiduMobAdSDK (5.352)
+  - BeiZiSDK-iOS/BeiZiSDK-iOS (4.90.4.9)
+  - CSJMAdmobAdapter (10.0.0.0):
+    - Ads-Fusion-CN-Beta/CSJMediation (>= 5.1.6.0)
+  - CSJMBaiduAdapter (5.14.0):
+    - Ads-Fusion-CN-Beta/CSJMediation (>= 5.1.7.4)
+  - CSJMGdtAdapter (4.14.30.0):
+    - Ads-Fusion-CN-Beta/CSJMediation (>= 5.1.7.4)
+  - CSJMKlevinAdapter (2.11.0.211.1):
+    - Ads-Fusion-CN-Beta/CSJMediation (>= 5.1.6.0)
+  - CSJMKsAdapter (3.3.42.0):
+    - Ads-Fusion-CN-Beta/CSJMediation (>= 5.1.7.0)
+  - CSJMMintegralAdapter (7.3.4.0.1):
+    - Ads-Fusion-CN-Beta/CSJMediation (>= 5.1.7.4)
+  - CSJMSigmobAdapter (4.8.0.0):
+    - Ads-Fusion-CN-Beta/CSJMediation (>= 5.1.7.4)
+  - CSJMUnityAdapter (4.3.0.0):
+    - Ads-Fusion-CN-Beta/CSJMediation (>= 5.1.6.0)
+  - Flutter (1.0.0)
+  - GDTMobSDK (4.14.76):
+    - GDTMobSDK/GDTMobSDK (= 4.14.76)
+  - GDTMobSDK/GDTMobSDK (4.14.76)
+  - KSAdSDK (3.3.65)
+  - LUYSDK (1.3.8.1):
+    - LUYSDK/Core (= 1.3.8.1)
+    - LUYSDK/luyBQT (= 1.3.8.1)
+    - LUYSDK/luyCSJ (= 1.3.8.1)
+    - LUYSDK/luyGDT (= 1.3.8.1)
+    - LUYSDK/luyKS (= 1.3.8.1)
+    - LUYSDK/luyMTG (= 1.3.8.1)
+    - LUYSDK/luySIG (= 1.3.8.1)
+    - LUYSDK/luyToBid (= 1.3.8.1)
+  - LUYSDK/Core (1.3.8.1)
+  - LUYSDK/luyBQT (1.3.8.1):
+    - BaiduMobAdSDK (~> 5.0)
+    - LUYSDK/Core
+  - LUYSDK/luyCSJ (1.3.8.1):
+    - Ads-Fusion-CN-Beta (~> 5.9)
+    - Ads-Fusion-CN-Beta/CSJMediation
+    - LUYSDK/Core
+  - LUYSDK/luyGDT (1.3.8.1):
+    - GDTMobSDK (~> 4.14)
+    - LUYSDK/Core
+  - LUYSDK/luyKS (1.3.8.1):
+    - KSAdSDK (>= 3.3.61)
+    - LUYSDK/Core
+  - LUYSDK/luyMTG (1.3.8.1):
+    - LUYSDK/Core
+    - MintegralAdSDK (= 7.4.8)
+    - MintegralAdSDK/BannerAd
+    - MintegralAdSDK/InterstitialAd
+    - MintegralAdSDK/InterstitialVideoAd
+    - MintegralAdSDK/NativeAdvancedAd
+    - MintegralAdSDK/RewardVideoAd
+    - MintegralAdSDK/SplashAd
+  - LUYSDK/luySIG (1.3.8.1):
+    - LUYSDK/Core
+    - ToBid-iOS (~> 3.3)
+  - LUYSDK/luyToBid (1.3.8.1):
+    - BeiZiSDK-iOS/BeiZiSDK-iOS
+    - CSJMAdmobAdapter (= 10.0.0.0)
+    - CSJMBaiduAdapter (= 5.14.0)
+    - CSJMGdtAdapter (= 4.14.30.0)
+    - CSJMKlevinAdapter (= 2.11.0.211.1)
+    - CSJMKsAdapter (= 3.3.42.0)
+    - CSJMMintegralAdapter (= 7.3.4.0.1)
+    - CSJMSigmobAdapter (= 4.8.0.0)
+    - CSJMUnityAdapter (= 4.3.0.0)
+    - LUYSDK/Core
+    - LUYSDK/luyBQT
+    - LUYSDK/luyCSJ
+    - LUYSDK/luyGDT
+    - LUYSDK/luyKS
+    - LUYSDK/luyMTG
+    - LUYSDK/luySIG
+  - MintegralAdSDK (7.4.8):
+    - MintegralAdSDK/BannerAd (= 7.4.8)
+    - MintegralAdSDK/BidBannerAd (= 7.4.8)
+    - MintegralAdSDK/BidInterstitialVideoAd (= 7.4.8)
+    - MintegralAdSDK/BidNativeAd (= 7.4.8)
+    - MintegralAdSDK/BidNewInterstitialAd (= 7.4.8)
+    - MintegralAdSDK/BidRewardVideoAd (= 7.4.8)
+    - MintegralAdSDK/InterstitialVideoAd (= 7.4.8)
+    - MintegralAdSDK/NativeAd (= 7.4.8)
+    - MintegralAdSDK/NewInterstitialAd (= 7.4.8)
+    - MintegralAdSDK/RewardVideoAd (= 7.4.8)
+  - MintegralAdSDK/BannerAd (7.4.8):
+    - MintegralAdSDK/NativeAd
+  - MintegralAdSDK/BidBannerAd (7.4.8):
+    - MintegralAdSDK/BannerAd
+    - MintegralAdSDK/BidNativeAd
+  - MintegralAdSDK/BidInterstitialVideoAd (7.4.8):
+    - MintegralAdSDK/BidNativeAd
+    - MintegralAdSDK/InterstitialVideoAd
+  - MintegralAdSDK/BidNativeAd (7.4.8):
+    - MintegralAdSDK/NativeAd
+  - MintegralAdSDK/BidNewInterstitialAd (7.4.8):
+    - MintegralAdSDK/BidNativeAd
+    - MintegralAdSDK/NewInterstitialAd
+  - MintegralAdSDK/BidRewardVideoAd (7.4.8):
+    - MintegralAdSDK/BidNativeAd
+    - MintegralAdSDK/RewardVideoAd
+  - MintegralAdSDK/InterstitialAd (7.4.8):
+    - MintegralAdSDK/NativeAd
+  - MintegralAdSDK/InterstitialVideoAd (7.4.8):
+    - MintegralAdSDK/NativeAd
+  - MintegralAdSDK/NativeAd (7.4.8)
+  - MintegralAdSDK/NativeAdvancedAd (7.4.8):
+    - MintegralAdSDK/NativeAd
+  - MintegralAdSDK/NewInterstitialAd (7.4.8):
+    - MintegralAdSDK/InterstitialVideoAd
+    - MintegralAdSDK/NativeAd
+  - MintegralAdSDK/RewardVideoAd (7.4.8):
+    - MintegralAdSDK/NativeAd
+  - MintegralAdSDK/SplashAd (7.4.8):
+    - MintegralAdSDK/NativeAd
+  - ToBid-iOS (3.7.3):
+    - ToBid-iOS/ToBidSDK (= 3.7.3)
+  - ToBid-iOS/ToBidSDK (3.7.3)
+
+DEPENDENCIES:
+  - adsjmsdk (from `.symlinks/plugins/adsjmsdk/ios`)
+  - Flutter (from `Flutter`)
+
+SPEC REPOS:
+  trunk:
+    - Ads-Fusion-CN-Beta
+    - BaiduMobAdSDK
+    - BeiZiSDK-iOS
+    - CSJMAdmobAdapter
+    - CSJMBaiduAdapter
+    - CSJMGdtAdapter
+    - CSJMKlevinAdapter
+    - CSJMKsAdapter
+    - CSJMMintegralAdapter
+    - CSJMSigmobAdapter
+    - CSJMUnityAdapter
+    - GDTMobSDK
+    - KSAdSDK
+    - LUYSDK
+    - MintegralAdSDK
+    - ToBid-iOS
+
+EXTERNAL SOURCES:
+  adsjmsdk:
+    :path: ".symlinks/plugins/adsjmsdk/ios"
+  Flutter:
+    :path: Flutter
+
+SPEC CHECKSUMS:
+  Ads-Fusion-CN-Beta: f9d37fdb96242a4b0185e068185832d87582531c
+  adsjmsdk: 908bb0a1e5e2204678c2a685f4db20c32a3cb7bd
+  BaiduMobAdSDK: 8bda9f50763f946f4bddc91bbc96567f2021c29e
+  BeiZiSDK-iOS: 32331446e77b13a26dab28b653c8a31d83e5f08c
+  CSJMAdmobAdapter: 5b28964907a769609bf43fd70517b778dc729394
+  CSJMBaiduAdapter: 212024ec81587b00555d40c8002cfcd23a26897a
+  CSJMGdtAdapter: 8aeda013ee68ef2f64b61a8da24e06f212853690
+  CSJMKlevinAdapter: 62fa8a42b313e5c96cf709df6bdbaf7618ba25b4
+  CSJMKsAdapter: 9435e303f60007630e109f07de2137b834c9064b
+  CSJMMintegralAdapter: 07fbcc123c9e1f386d9c09f601cad3851060014f
+  CSJMSigmobAdapter: a2050a9dd8c9221622d580e82d1735956df6110b
+  CSJMUnityAdapter: 815716bf55165ddcd50104be2129966ae8773085
+  Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
+  GDTMobSDK: 037a4e91a91d277d7864fa0f413599acecc6e8f4
+  KSAdSDK: b7f90537041c6dbff0f1f8de52ea222e01149a3d
+  LUYSDK: 7e79af0ab5a0268e85c92ad7afd7b018a95228b6
+  MintegralAdSDK: ee69f71e371f25c2459315a1f724d13fa119ad88
+  ToBid-iOS: 4c0c5a7c83a84d706fbbc63acb084e2506ad6486
+
+PODFILE CHECKSUM: 21b76a58c8d8b2ae6a5785aaa5c9f700e6f5b010
+
+COCOAPODS: 1.14.3

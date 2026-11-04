@@ -1,0 +1,80 @@
+# Operating system
+.DS_Store
+Thumbs.db
+
+# Nested project repositories are kept locally while this workspace is migrated
+# into one root repository.
+**/.git
+
+# IDE and editor state
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+
+# Environment and local configuration
+.env
+.env.*
+!**/.env.example
+!**/.env.*.example
+**/local.properties
+**/key.properties
+**/app-dev.yml
+**/app-prod.yml
+**/wxpay_v3.properties
+/live_user_app/lib/init/config.dart
+/live_mall_admin/script/snowy.sql
+/live_mall_admin/snowy-web-app/src/main/resources/app.yml
+**/*.code-workspace
+
+# Secrets, certificates, and signing material
+**/*.pem
+**/*.p12
+**/*.jks
+**/*.keystore
+**/upload-keystore.*
+
+# Java / Maven / Gradle output
+**/target/
+**/.gradle/
+**/build/
+**/gradle-wrapper.jar
+*.class
+
+# JavaScript / uni-app output and dependencies
+**/node_modules/
+/live_mall_admin/snowy-admin-web/dist/
+/live_h5/unpackage/dist/build/
+/live_h5/unpackage/dist/cache/
+**/coverage/
+*.tsbuildinfo
+
+# Flutter / Dart generated state
+**/.dart_tool/
+**/.flutter-plugins
+**/.flutter-plugins-dependencies
+**/.pub-cache/
+**/ios/Flutter/ephemeral/
+**/macos/Flutter/ephemeral/
+**/linux/flutter/ephemeral/
+**/windows/flutter/ephemeral/
+**/ios/Flutter/.last_build_id
+app.*.symbols
+app.*.map.json
+
+# Logs and temporary files
+*.log
+logs/
+*.swp
+*.swo
+*.tmp
+*.bak
+*~
+
+# Python generator caches
+__pycache__/
+*.py[cod]
+
+# Local backups
+*.before_flutter_*

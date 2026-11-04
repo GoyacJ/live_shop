@@ -1,0 +1,38 @@
+allprojects {
+    repositories {
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        maven { url 'https://maven.aliyun.com/repository/central' }
+        google()
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+    }
+}
+
+//buildscript {
+//    repositories {
+//        google()
+//        jcenter()
+//    }
+//
+//    dependencies {
+//        classpath 'com.android.tools.build:gradle:4.1.0' // 确保这是Flutter支持的版本
+//    }
+//}
+
+rootProject.buildDir = "../build"
+subprojects {
+    project.buildDir = "${rootProject.buildDir}/${project.name}"
+}
+subprojects {
+    project.evaluationDependsOn(":app")
+}
+
+dependencies {
+//    def aio_sdk_version = "7.0.0"
+//    implementation "com.aliyun.aio:AliVCSDK_InteractiveLive:$aio_sdk_version"
+//    implementation 'com.google.code.gson:gson:2.8.6'
+}
+
+tasks.register("clean", Delete) {
+    delete rootProject.buildDir
+}

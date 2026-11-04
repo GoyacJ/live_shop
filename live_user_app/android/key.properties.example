@@ -1,0 +1,6 @@
+# 复制为 key.properties 后填入发布签名信息。
+# key.properties 和签名库文件均不得提交到仓库。
+storePassword=YOUR_STORE_PASSWORD
+keyPassword=YOUR_KEY_PASSWORD
+keyAlias=YOUR_KEY_ALIAS
+storeFile=../upload-keystore.jks

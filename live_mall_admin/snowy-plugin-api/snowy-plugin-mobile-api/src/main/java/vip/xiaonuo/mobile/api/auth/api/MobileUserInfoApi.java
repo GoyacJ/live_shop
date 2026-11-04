@@ -1,0 +1,50 @@
+/*
+ * Copyright [2022] [https://www.xiaonuo.vip]
+ *
+ * Snowy采用APACHE LICENSE 2.0开源协议，您在使用过程中，需要注意以下几点：
+ *
+ * 1.请不要删除和修改根目录下的LICENSE文件。
+ * 2.请不要删除和修改Snowy源码头部的版权声明。
+ * 3.本项目代码可免费商业使用，商业使用请保留源码和相关描述文件的项目出处，作者声明等。
+ * 4.分发源码时候，请注明软件出处 https://www.xiaonuo.vip
+ * 5.不可二次分发开源参与同类竞品，如有想法可联系团队xiaonuobase@qq.com商议合作。
+ * 6.若您的项目无法满足以上几点，需要更多功能代码，获取Snowy商业授权许可，请在官网购买授权，地址为 https://www.xiaonuo.vip
+ */
+package vip.xiaonuo.mobile.api.auth.api;
+
+import cn.hutool.json.JSONObject;
+import org.noear.solon.core.handle.UploadedFile;
+import vip.xiaonuo.common.pojo.CommonResult;
+import vip.xiaonuo.mobile.api.auth.pojo.MobileLoginUser;
+import vip.xiaonuo.mobile.api.auth.pojo.MobileUserInfo;
+
+/**
+ * 登录注册API
+ *
+ */
+public interface MobileUserInfoApi {
+
+    /**
+     * 移动端根据手机号查询用户信息
+     *
+     */
+    CommonResult getUserInfoByMobile(String mobile);
+
+    /**
+     * 移动端新增加用户信息
+     *
+     */
+    CommonResult addUserInfo(JSONObject jSONObject);
+
+    /**
+     * 编辑用户头像信息
+     *
+     */
+    CommonResult editUserAvatar(String mobile,UploadedFile file);
+
+    /**
+     * 编辑用户基础信息
+     *
+     */
+    CommonResult editUserBasic (JSONObject jSONObject);
+}

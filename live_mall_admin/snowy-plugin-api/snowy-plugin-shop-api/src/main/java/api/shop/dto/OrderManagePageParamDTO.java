@@ -1,0 +1,52 @@
+package api.shop.dto;
+
+import io.swagger.annotations.ApiModelProperty;
+
+import java.time.LocalDateTime;
+
+/**
+ * <p></p>
+ *
+ * @author goya
+ * @since 2025/5/21 14:10
+ */
+public record OrderManagePageParamDTO(
+
+        @ApiModelProperty("用户名")
+        String userName,
+
+        @ApiModelProperty("手机号")
+        String phone,
+
+        @ApiModelProperty("邀请码")
+        String invitationCode,
+
+        /* 当前页 */
+        @ApiModelProperty(value = "当前页码")
+        Integer current,
+
+        /* 每页条数 */
+        @ApiModelProperty(value = "每页条数")
+        Integer size,
+
+        /* 排序字段 */
+        @ApiModelProperty(value = "排序字段，字段驼峰名称，如：userName")
+        String sortField,
+
+        /* 排序方式 */
+        @ApiModelProperty(value = "排序方式，升序：ASCEND；降序：DESCEND")
+        String sortOrder,
+
+        /* 关键词 */
+        @ApiModelProperty(value = "关键词")
+        String searchKey,
+
+        /* 创建时间开始 */
+        @ApiModelProperty(value = "创建时间开始")
+        LocalDateTime startCreateTime,
+
+        /* 创建时间结束 */
+        @ApiModelProperty(value = "创建时间结束")
+        LocalDateTime endCreateTime
+) {
+}

@@ -1,0 +1,35 @@
+{
+    "Count":"1",
+    "Data":
+        [
+            {
+            "StateEx":"301",
+            "LogisticCode":"YT0000000000000",
+            "ShipperCode":"YTO",
+            "Traces":
+                [
+                    {"Action":"1","AcceptStation":"中国邮政 已收取快件","AcceptTime":"2024-11-05 09:06:28","Remark":"","Location":"济南市"},
+                    {"Action":"2","AcceptStation":"快件已在【济南市联四路揽投部】完成分拣，准备发出","AcceptTime":"2024-11-05 18:38:37","Remark":"","Location":"济南市"},
+                    {"Action":"2","AcceptStation":"快件离开【济南市联四路揽投部】，正在发往【济南市寄递事业部济北快件处理车间】","AcceptTime":"2024-11-05 18:56:54","Remark":"","Location":"济南市"},
+                    {"Action":"2","AcceptStation":"快件到达【济南市寄递事业部济北快件处理车间】","AcceptTime":"2024-11-05 20:15:26","Remark":"","Location":"济南市"},
+                    {"Action":"2","AcceptStation":"快件离开【济南市寄递事业部济北快件处理车间】，正在发往下一站","AcceptTime":"2024-11-06 05:18:48","Remark":"","Location":"济南市"},
+                    {"Action":"2","AcceptStation":"快件到达【济南陆运集散中心】","AcceptTime":"2024-11-06 15:49:41","Remark":"","Location":"德州市"},
+                    {"Action":"2","AcceptStation":"快件离开【济南陆运集散中心】，正在发往下一站","AcceptTime":"2024-11-06 21:57:10","Remark":"","Location":"德州市"},
+                    {"Action":"2","AcceptStation":"快件到达【揭阳市快件处理中心】","AcceptTime":"2024-11-07 23:46:41","Remark":"","Location":"揭阳市"},
+                    {"Action":"2","AcceptStation":"快件离开【揭阳市快件处理中心】，正在发往下一站","AcceptTime":"2024-11-08 02:59:25","Remark":"","Location":"揭阳市"},
+                    {"Action":"2","AcceptStation":"快件到达【梅州中心包件车间】","AcceptTime":"2024-11-08 06:52:23","Remark":"","Location":"梅州市"},
+                    {"Action":"2","AcceptStation":"快件离开【梅州中心包件车间】，正在发往下一站","AcceptTime":"2024-11-08 10:10:05","Remark":"","Location":"梅州市"},
+                    {"Action":"2","AcceptStation":"快件到达【梅州市大浪口揽投部】","AcceptTime":"2024-11-08 14:20:24","Remark":"","Location":"梅州市"},
+                    {"Action":"202","AcceptStation":"快件正在派送中，请耐心等待，保持电话畅通，准备签收，如有疑问请电联快递员【快递员，电话:185****2062】或揽投部【电话:0753-****925】，投诉请致电11183。","AcceptTime":"2024-11-08 14:25:24","Remark":"","Location":"梅州市"},
+                    {"Action":"211","AcceptStation":"您的快件已派送至【邮政便民服务】，自提点电话:178****2516，请您凭取件码领取快件，如有疑问请电联快递员【电话:185****2062】，投诉请致电11183。","AcceptTime":"2024-11-08 15:33:15","Remark":"","Location":"梅州市"},
+                    {"Action":"301","AcceptStation":"您的快件已签收【邮政便民服务】，如有疑问请电联快递员【电话:185****2062】。连接美好，无处不在，感谢您使用中国邮政，期待再次为您服务。","AcceptTime":"2024-11-08 16:04:41","Remark":"","Location":"梅州市"}
+                ],
+            "State":"3",
+            "OrderCode":"123456789",
+            "EBusinessID":"DEMO_EBUSINESS_ID",
+            "Location":"梅州市"}
+
+        ],
+    "EBusinessID":"DEMO_EBUSINESS_ID",
+    "PushTime":"2025-04-29 13:27:34"
+}

@@ -1,0 +1,100 @@
+# 复制为 app-dev.yml 后填入本地/测试环境真实值。
+# app-dev.yml 已被 .gitignore 排除，禁止提交真实凭据。
+
+#########################################
+# Involves the configuration of the environment
+#########################################
+
+#########################################
+# redis configuration
+#########################################
+#snowy.redis.db: 0
+#snowy.redis.server: 192.168.1.204:16379
+#snowy.redis.password: openIM123
+#snowy.redis.timeout: 10s
+snowy.redis.db: 1
+snowy.redis.server: 127.0.0.1:6379
+snowy.redis.password: YOUR_REDIS_PASSWORD
+snowy.redis.timeout: 10s
+
+#########################################
+# sa-token redis configuration
+#########################################
+# sa-token redis configuration
+
+sa-token.redis.db: ${snowy.redis.db}
+sa-token.redis.server: ${snowy.redis.server}
+sa-token.redis.password: ${snowy.redis.password}
+sa-token.redis.timeout: ${snowy.redis.timeout}
+
+#########################################
+# datasource configuration
+#########################################
+snowy.datasource.dynamic.type: "com.zaxxer.hikari.HikariDataSource"
+snowy.datasource.dynamic.strict: true
+
+# mysql
+#snowy.datasource.dynamic.master.driverClassName: com.mysql.cj.jdbc.Driver
+#snowy.datasource.dynamic.master.jdbcUrl: jdbc:mysql://192.168.1.204:13306/live?useUnicode=true&characterEncoding=utf-8&useSSL=false&allowPublicKeyRetrieval=true&nullCatalogMeansCurrent=true&useInformationSchema=true
+#snowy.datasource.dynamic.master.username: root
+#snowy.datasource.dynamic.master.password: root123.@
+snowy.datasource.dynamic.master.driverClassName: com.mysql.cj.jdbc.Driver
+snowy.datasource.dynamic.master.jdbcUrl: jdbc:mysql://127.0.0.1:3306/live?useUnicode=true&characterEncoding=utf-8&useSSL=false&allowPublicKeyRetrieval=true&nullCatalogMeansCurrent=true&useInformationSchema=true
+snowy.datasource.dynamic.master.username: root
+snowy.datasource.dynamic.master.password: YOUR_MYSQL_PASSWORD
+
+#########################################
+# live configuration
+#########################################
+live.push.domain: push.live.weilaizhihuigu.cn
+live.pull.domain: pull.live.weilaizhihuigu.cn
+live.protocol: rtmp
+live.app.name: live-app
+live.stream.name: liveStream
+#live.push.ident.key: DqN5vl3vzyVn2sKH
+live.push.ident.key: YOUR_LIVE_PUSH_IDENT_KEY
+#live.pull.ident.key: 9iiRIEGliAVsM1Ju
+live.pull.ident.key: YOUR_LIVE_PULL_IDENT_KEY
+live.ident.valid.time: 10800
+
+#########################################
+# openim configuration
+#########################################
+openim:
+#  ip: 192.168.2.200:10002
+  ip: 127.0.0.1:10002
+#  secret: openIM123
+  secret: YOUR_OPENIM_SECRET
+  userId: imAdmin
+  systemUser: 7371045394
+
+#########################################
+# qr configuration
+#########################################
+appQr:
+  appCodeContent: https://h5.live.weilaizhihuigu.cn/#/pages/login/login
+  width: 550
+  height: 550
+
+liveQr:
+  liveCodeContent: www.baidu.com
+
+# 移动端API 配置
+mobile.request.allowed-time-difference: 60000  # 接口允许时差，单位毫秒
+mobile.request.sign-secret: YOUR_MOBILE_SIGN_SECRET
+
+mobile.user.login-sms-expire-time: 3000    # 验证码有效期，单位秒
+mobile.user.login-sms-length: 4    # 验证码长度
+mobile.user.token-expire-time: 604800    # token有效期，单位秒
+
+
+#########################################
+# 快递配置
+#########################################
+logistics:
+  enabled: true
+  platform: Kdniao
+  kdniao:
+    url: https://api.kdniao.com
+    userId: YOUR_KDNIAO_USER_ID
+    apiKey: YOUR_KDNIAO_API_KEY

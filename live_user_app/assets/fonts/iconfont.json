@@ -1,0 +1,212 @@
+{
+  "id": "4454392",
+  "name": "flutter3抖音短视频",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "37953299",
+      "name": "短视频脚本",
+      "font_class": "duanshipin",
+      "unicode": "e682",
+      "unicode_decimal": 59010
+    },
+    {
+      "icon_id": "8152440",
+      "name": "直播",
+      "font_class": "zhibo",
+      "unicode": "e71a",
+      "unicode_decimal": 59162
+    },
+    {
+      "icon_id": "1254726",
+      "name": "17错误",
+      "font_class": "close",
+      "unicode": "e614",
+      "unicode_decimal": 58900
+    },
+    {
+      "icon_id": "1277688",
+      "name": "购物车",
+      "font_class": "cart",
+      "unicode": "e64f",
+      "unicode_decimal": 58959
+    },
+    {
+      "icon_id": "3315122",
+      "name": "视频",
+      "font_class": "shipin",
+      "unicode": "e616",
+      "unicode_decimal": 58902
+    },
+    {
+      "icon_id": "4744998",
+      "name": "icon_直播-面",
+      "font_class": "zhibo3",
+      "unicode": "e65b",
+      "unicode_decimal": 58971
+    },
+    {
+      "icon_id": "4948990",
+      "name": "商品创建",
+      "font_class": "goods",
+      "unicode": "e626",
+      "unicode_decimal": 58918
+    },
+    {
+      "icon_id": "201525",
+      "name": "礼物 活动",
+      "font_class": "gift1",
+      "unicode": "e602",
+      "unicode_decimal": 58882
+    },
+    {
+      "icon_id": "594379",
+      "name": "添加",
+      "font_class": "tianjia",
+      "unicode": "e63b",
+      "unicode_decimal": 58939
+    },
+    {
+      "icon_id": "723341",
+      "name": "红包",
+      "font_class": "hongbao1",
+      "unicode": "e617",
+      "unicode_decimal": 58903
+    },
+    {
+      "icon_id": "971283",
+      "name": "04下拉箭头",
+      "font_class": "arrD",
+      "unicode": "e604",
+      "unicode_decimal": 58884
+    },
+    {
+      "icon_id": "1025089",
+      "name": "艾特",
+      "font_class": "aite",
+      "unicode": "e60d",
+      "unicode_decimal": 58893
+    },
+    {
+      "icon_id": "1173119",
+      "name": "车巴巴-箭头上",
+      "font_class": "arrT",
+      "unicode": "e659",
+      "unicode_decimal": 58969
+    },
+    {
+      "icon_id": "1173123",
+      "name": "车巴巴-箭头右",
+      "font_class": "arrR",
+      "unicode": "e65c",
+      "unicode_decimal": 58972
+    },
+    {
+      "icon_id": "1173124",
+      "name": "车巴巴-箭头左",
+      "font_class": "arrL",
+      "unicode": "e65d",
+      "unicode_decimal": 58973
+    },
+    {
+      "icon_id": "11372639",
+      "name": "爱心",
+      "font_class": "aixin",
+      "unicode": "e8ab",
+      "unicode_decimal": 59563
+    },
+    {
+      "icon_id": "11372651",
+      "name": "点赞",
+      "font_class": "dianzan",
+      "unicode": "e8ae",
+      "unicode_decimal": 59566
+    },
+    {
+      "icon_id": "11372664",
+      "name": "红包",
+      "font_class": "hongbao",
+      "unicode": "e8b0",
+      "unicode_decimal": 59568
+    },
+    {
+      "icon_id": "17739991",
+      "name": "播放",
+      "font_class": "play",
+      "unicode": "e87b",
+      "unicode_decimal": 59515
+    },
+    {
+      "icon_id": "17740337",
+      "name": "视频",
+      "font_class": "video",
+      "unicode": "e87c",
+      "unicode_decimal": 59516
+    },
+    {
+      "icon_id": "17789236",
+      "name": "奖杯",
+      "font_class": "jiangbei",
+      "unicode": "e891",
+      "unicode_decimal": 59537
+    },
+    {
+      "icon_id": "17789306",
+      "name": "添加视频",
+      "font_class": "addvideo",
+      "unicode": "e894",
+      "unicode_decimal": 59540
+    },
+    {
+      "icon_id": "17945387",
+      "name": "钱",
+      "font_class": "money",
+      "unicode": "e8b2",
+      "unicode_decimal": 59570
+    },
+    {
+      "icon_id": "17947390",
+      "name": "添加",
+      "font_class": "addcircle",
+      "unicode": "e8b7",
+      "unicode_decimal": 59575
+    },
+    {
+      "icon_id": "29797978",
+      "name": "活动",
+      "font_class": "gift",
+      "unicode": "100d1",
+      "unicode_decimal": 65745
+    },
+    {
+      "icon_id": "29797990",
+      "name": "钱包",
+      "font_class": "wallet",
+      "unicode": "100d3",
+      "unicode_decimal": 65747
+    },
+    {
+      "icon_id": "29797996",
+      "name": "商品",
+      "font_class": "shangpin",
+      "unicode": "100d8",
+      "unicode_decimal": 65752
+    },
+    {
+      "icon_id": "29798005",
+      "name": "图片",
+      "font_class": "tupian",
+      "unicode": "100db",
+      "unicode_decimal": 65755
+    },
+    {
+      "icon_id": "21024483",
+      "name": "抖音",
+      "font_class": "douyin",
+      "unicode": "e63c",
+      "unicode_decimal": 58940
+    }
+  ]
+}

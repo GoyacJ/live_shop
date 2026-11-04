@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="vip.xiaonuo.live.modular.shoppingcar.mapper.ShoppingCarMapper">
+
+    <resultMap id="ms" type="vip.xiaonuo.live.modular.shoppingcar.entity.ShoppingCar">
+        <id column="id" property="id" />
+        <result column="goods_id" property="goodsId" />
+        <result column="live_id" property="liveId" />
+        <result column="quantity" property="quantity" />
+        <result column="price" property="price" />
+        <result column="create_time" property="createTime" />
+        <result column="main_title" property="liveName" />
+    </resultMap>
+    <select id="selectListByXml" resultMap="ms" parameterType="vip.xiaonuo.live.modular.shoppingcar.param.ShoppingCarPageParam">
+        SELECT
+            sc.*,
+            l.main_title
+        FROM
+            live_shopping_car sc
+            LEFT JOIN live_biz l ON sc.live_id = l.id and l.delete_flag = 'NOT_DELETE'
+        where sc.delete_flag = 'NOT_DELETE'
+        <if test="p.goodsId != null and p.goodsId != ''">
+            and sc.goods_id = ${p.goodsId}
+        </if>
+        <if test="p.liveId != null and p.liveId != ''">
+            and sc.live_id = ${p.liveId}
+        </if>
+    </select>
+
+    <update id="updateStock">
+        UPDATE live_shopping_car
+        SET quantity = quantity - #{stock}
+        WHERE id = #{shopCarId}
+          AND quantity >= #{stock}
+    </update>
+</mapper>
