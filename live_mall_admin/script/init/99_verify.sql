@@ -79,6 +79,21 @@ UNION ALL SELECT 'content_short_play', COUNT(*) FROM content_short_play
 UNION ALL SELECT 'task_info', COUNT(*) FROM task_info;
 
 -- ------------------------------------------------------------
+-- 8.1 移动端联调必需数据（跑了 05_demo_mobile_data.sql 才非 0）
+--     期望：轮播 3 / 商品 >= 6 / 专题 3 / 版本 2 / 直播场次 3 / 积分商品 3 / 任务 4 / 短剧 3
+-- ------------------------------------------------------------
+SELECT '首页轮播(CLIENT_MOBILE)' AS 表名, COUNT(*) AS 行数 FROM dev_slideshow WHERE PLACE LIKE '%CLIENT_MOBILE%' AND STATUS = 'ENABLE'
+UNION ALL SELECT 'mall_goods', COUNT(*) FROM mall_goods
+UNION ALL SELECT 'mall_goods_special_topic', COUNT(*) FROM mall_goods_special_topic
+UNION ALL SELECT 'mall_goods_special_topic_detail', COUNT(*) FROM mall_goods_special_topic_detail
+UNION ALL SELECT 'dev_app_version', COUNT(*) FROM dev_app_version
+UNION ALL SELECT 'live_streaming_type', COUNT(*) FROM live_streaming_type
+UNION ALL SELECT 'live_biz', COUNT(*) FROM live_biz
+UNION ALL SELECT 'mall_integral_goods', COUNT(*) FROM mall_integral_goods
+UNION ALL SELECT 'task_info', COUNT(*) FROM task_info
+UNION ALL SELECT 'content_short_play', COUNT(*) FROM content_short_play;
+
+-- ------------------------------------------------------------
 -- 9. 总判：表数 79 + 无无主键表 = PASS
 -- ------------------------------------------------------------
 SELECT CASE

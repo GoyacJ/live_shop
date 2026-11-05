@@ -80,8 +80,10 @@ liveQr:
   liveCodeContent: www.baidu.com
 
 # 移动端API 配置
+# sign-secret 必须与 live_user_app/lib/init/config.dart 中的 apiSecret 完全一致，
+# 否则移动端所有 /mapi 请求都会返回“参数校验失败”。
 mobile.request.allowed-time-difference: 60000  # 接口允许时差，单位毫秒
-mobile.request.sign-secret: YOUR_MOBILE_SIGN_SECRET
+mobile.request.sign-secret: local_demo_sign_secret
 
 mobile.user.login-sms-expire-time: 3000    # 验证码有效期，单位秒
 mobile.user.login-sms-length: 4    # 验证码长度

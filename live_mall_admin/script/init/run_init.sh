@@ -8,6 +8,7 @@
 #   ./script/init/run_init.sh --no-demo  # 只要系统基础数据
 #
 # --no-demo 用于生产：跳过 03_business_data.sql（早期联调的商品、公告、测试用户）
+#                     和 05_demo_mobile_data.sql（移动端完整演示数据）
 # =============================================================
 set -euo pipefail
 
@@ -47,8 +48,9 @@ run_sql "$HERE/01_schema.sql"
 run_sql "$HERE/02_base_data.sql"
 if [ "$WITH_DEMO" -eq 1 ]; then
   run_sql "$HERE/03_business_data.sql"
+  run_sql "$HERE/05_demo_mobile_data.sql"
 else
-  echo ">> 跳过 03_business_data.sql (--no-demo)"
+  echo ">> 跳过 03_business_data.sql / 05_demo_mobile_data.sql (--no-demo)"
 fi
 run_sql "$HERE/04_patch_2025-04-09.sql"
 

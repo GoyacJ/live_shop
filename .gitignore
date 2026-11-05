@@ -47,6 +47,9 @@ Thumbs.db
 /live_mall_admin/snowy-admin-web/dist/
 /live_h5/unpackage/dist/build/
 /live_h5/unpackage/dist/cache/
+/live_h5/dist/
+/.claude/
+/live_h5/.claude/
 **/coverage/
 *.tsbuildinfo
 

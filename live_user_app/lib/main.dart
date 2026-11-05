@@ -27,7 +27,7 @@ void main() {
 void init() async {
   // PaintingBinding.instance.imageCache.maximumSize=10000;
   ///环境修改
-  Config.env = Env.PROD;
+  Config.env = Env.DEV;
   // 第三方初始化
   await AppInit.init();
   runApp(const Application());

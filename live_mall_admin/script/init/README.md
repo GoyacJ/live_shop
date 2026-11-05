@@ -22,6 +22,7 @@
 | `02_base_data.sql` | 脱敏后的系统基础数据：机构、角色、演示用户、菜单、按钮、字典、配置、模块 | 每次新建库 |
 | `03_business_data.sql` | 脱敏后的业务演示数据：商品、轮播、公告、积分、测试用户 | 联调要，生产不要 |
 | `04_patch_2025-04-09.sql` | 4 月增量：积分商城菜单、订单状态字典、营销活动字段 | 每次新建库 |
+| `05_demo_mobile_data.sql` | 移动端完整演示数据：轮播、商品、专题、APP 版本、直播、积分商品、任务、短剧 | 联调要，生产不要 |
 | `99_verify.sql` | 建完自检：表数、主键、字符集、关键行数、超管账号 | 建完跑一次 |
 | `run_init.sh` | 把上面几步串起来，一把跑完 | 推荐入口 |
 | `tools/gen_schema.py` | 生成器，从实体类重新生成 | 改了实体之后 |
@@ -70,6 +71,24 @@ mysql -h127.0.0.1 -uroot -p --default-character-set=utf8mb4 -t live < 99_verify.
 - `sys_resource` 176 行、`mobile_resource` 18 行、`dev_dict` 198 行、`gen_config` 119 行
 
 对不上说明中途有语句失败，看导入时的报错。
+
+## 移动端联调注意
+
+`05_demo_mobile_data.sql` 里的图片使用 `picsum.photos` 固定 seed，加载图片需要外网；
+离线环境请把 `IMAGE` / `COVER` / `HOST_IMAGE` 等字段换成自己的静态资源地址。
+
+移动端接口签名还有一条硬约束：
+
+- 后端 `app-dev.yml` 的 `mobile.request.sign-secret`
+- Flutter `lib/init/config.dart` 的 `apiSecret`
+
+两者必须完全一致，否则所有 `/mapi/**` 请求都会返回 `参数校验失败`。
+本地演示值统一为 `local_demo_sign_secret`。
+
+Android 模拟器访问宿主机时，二选一：
+
+- 执行 `adb reverse tcp:8081 tcp:8081`，`baseUrl` 保持 `http://127.0.0.1:8081`
+- 不建反向代理时，把 `baseUrl` 改成 `http://10.0.2.2:8081`
 
 ## 演示账号
 

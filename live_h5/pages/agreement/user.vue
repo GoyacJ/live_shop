@@ -8,6 +8,8 @@
 </template>
 
 <script>
+import { apiUrl } from '../../api'
+
 export default {
   data() {
     return {
@@ -21,7 +23,7 @@ export default {
     async fetchAgreement() {
       try {
         const res = await uni.request({
-          url: 'https://api.live.weilaizhihuigu.cn/index/privacy-agreement',
+          url: apiUrl('/index/privacy-agreement'),
           method: 'GET'
         })
        if (res.data.code === 200) {

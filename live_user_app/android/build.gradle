@@ -27,6 +27,18 @@ subprojects {
     project.evaluationDependsOn(":app")
 }
 
+// flutter_openim_sdk predates AGP 8 and declares its package only in the
+// AndroidManifest. Supply the equivalent Android library settings when its plugin is applied.
+subprojects { subproject ->
+    subproject.plugins.withId("com.android.library") {
+        if (subproject.name == "flutter_openim_sdk") {
+            def androidExtension = subproject.extensions.getByType(com.android.build.gradle.LibraryExtension)
+            androidExtension.namespace = "io.openim.flutter_openim_sdk"
+            androidExtension.compileSdk = 36
+        }
+    }
+}
+
 dependencies {
 //    def aio_sdk_version = "7.0.0"
 //    implementation "com.aliyun.aio:AliVCSDK_InteractiveLive:$aio_sdk_version"

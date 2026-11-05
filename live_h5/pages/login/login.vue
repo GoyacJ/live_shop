@@ -51,6 +51,8 @@
 </template>
 
 <script>
+import { apiUrl } from '../../api'
+
 	export default {
 		data() {
 			return {
@@ -71,11 +73,11 @@
       // 获取下载链接
       getDownloadUrl() {
         uni.request({
-          url: "https://api.live.weilaizhihuigu.cn/getAppVersion",
+          url: apiUrl('/getAppVersion'),
           method:'GET',
           success: (result) => {
             if (result.data.code==200) {
-              this.downloadUrl = result.data.data['android']['appUrl'] || ''
+              this.downloadUrl = result.data.data?.android?.appUrl || ''
             }
           }
         })
@@ -87,7 +89,7 @@
         let _this = this
         // 发送验证码
         uni.request({
-          url: "https://api.live.weilaizhihuigu.cn/h5/getCode?phone=" +this.phone,
+          url: apiUrl('/h5/getCode?phone=' + encodeURIComponent(this.phone)),
           dataType: "json",
           method:'GET',
           success: (result) => {
@@ -120,7 +122,7 @@
       
       handleLogin() {
         uni.request({
-          url: "https://api.live.weilaizhihuigu.cn/h5/login",
+          url: apiUrl('/h5/login'),
           data: {
             "phone": this.phone,
             "code": this.code,

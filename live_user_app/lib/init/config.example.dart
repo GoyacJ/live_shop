@@ -22,8 +22,11 @@ class Config {
 
     switch (env) {
       case Env.DEV:
-        entity.baseUrl = "http://172.16.201.189:8081";
-        entity.apiSecret = "YOUR_API_SECRET";
+        // Android 模拟器直连宿主机时改成 http://10.0.2.2:8081；
+        // 已执行 `adb reverse tcp:8081 tcp:8081` 时保持 127.0.0.1 即可。
+        entity.baseUrl = "http://127.0.0.1:8081";
+        // 必须与后端 app-dev.yml 的 mobile.request.sign-secret 完全一致。
+        entity.apiSecret = "local_demo_sign_secret";
         entity.openIMApi = "https://im.live.weilaizhihuigu.cn";
         entity.openIMWs = "wss://ims.live.weilaizhihuigu.cn";
         entity.wxAppId = "wxf2d73edc18790025";

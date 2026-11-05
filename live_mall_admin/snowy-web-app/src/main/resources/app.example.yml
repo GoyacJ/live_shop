@@ -35,7 +35,7 @@ mybatis-flex:
     logEnabled: true
     keyConfig:
       keyType: "Generator"
-      valueType: "snowFlakeId"
+      value: "snowFlakeId"
 
 knife4j.enable: true
 knife4j.production: false
